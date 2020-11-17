@@ -1,0 +1,39 @@
+{% extends "Base_generic.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="row">
+<div class="container py-5 col-12">
+
+{% if local_list %}
+<div  class="d-flex justify-content-center pt-3 " >
+<div class="card border-primary pb-5 col-8" >
+    <img class="card-img-top" src="{% static 'images/LogoHTML.png' %}" alt="">
+    <div class="card-body mx-auto text-danger pt-5 ">
+        <h3 class="card-title ">Locales</h3>
+        
+    </div>
+    <ul class="list-group list-group-flush  ">
+        {% for local in local_list %}
+        <li class="list-group-item  mx-auto">
+            <a href="{{ local.get_absolute_url }}"> {{local.nombre}}</a> 
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+
+
+{% else %}
+    <p>No hay locales registrados</p>
+
+{% endif %}
+
+
+
+</div>
+</div>
+</div>
+{% endblock %}
