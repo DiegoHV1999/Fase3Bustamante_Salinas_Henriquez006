@@ -72,9 +72,16 @@ Cosas que faltan:
                     <div class="navbar-nav text-center ml-auto">
                         <!--Items de la barra de navegacion-->
                         <a class="nav-item nav-link" href="{% url 'index' %}">Inicio</a>
-                        <a class="nav-item nav-link active" href="{% url 'sobrenosotros' %}">Acerca de nosotros</a>
-                        <a class="nav-item nav-link" href="{% url 'local_create' %}">Registro locales</a>
+                        <a class="nav-item nav-link" href="{% url 'sobrenosotros' %}">Acerca de nosotros</a>
+                        
                         <a class="nav-item nav-link" href="{% url 'locales' %}">Locales</a>
+                        {% if user.is_authenticated %}
+                        
+                        <a class="nav-item nav-link active" href="{% url 'transportes' %}">Transportes</a>
+                        <a class="nav-item nav-link active" href="{% url 'logout' %}">Cerrar sesión</a>
+                        {% else %}
+                        <a class="nav-item nav-link active" href="{% url 'login' %}">Iniciar sesión</a>
+                        {% endif %}
                     </div>
 
                     <div class="ml-auto d-flex flex-row justify-content-center ">

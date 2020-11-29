@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import local
+from . models import local, transporte
 from django.views import generic
 
 #importando para los formularios
@@ -58,6 +58,31 @@ class LocalDetailView(generic.DetailView):
 
 class LocalListView(generic.ListView):
     model  = local
+    paginate_by = 10
+
+#Transporte
+
+
+class transporteCreate(CreateView):
+    model = transporte
+    fields = '__all__'
+
+class transporteUpdate(UpdateView):
+    model = transporte
+    fields = {'nombre', 'telefono', 'correo'}
+
+class transporteDelete(DeleteView):
+    model = transporte
+    success_url = reverse_lazy('index')
+
+#Vista de detalle
+class transporteDetailView(generic.DetailView):
+    model = transporte
+
+#Lista de transporte
+
+class transporteListView(generic.ListView):
+    model  = transporte
     paginate_by = 10
 
 

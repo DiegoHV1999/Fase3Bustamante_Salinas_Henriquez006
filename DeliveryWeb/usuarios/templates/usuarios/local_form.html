@@ -23,14 +23,13 @@
     <div class="col-4 ml-auto">
     <h1 class="pt-5 text-white" style="font-family:'Times New Roman';">¡Registro!</h1>
     </div>    
-    <form action="" method="post">
+    <form class="text-dark" action="" method="post">
         {%csrf_token%}
 
         <div class="col-xl-4 col-md-6 col-sm-6 ml-auto text-white pt-2">
-            <table class=" "
->
-                <!--{{form|crispy}}-->
-                {{form.as_p}}
+            <table>
+                {{form|crispy}}
+                <!--{{form.as_p}}-->
             </table>
             
             

@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<h1>Hola</h1>
+<div class="pt-5">
 
 {% if user.is_authenticated %}
 <h3 class="card">Hola {{ user.username }}</h3>
 {% else %}
-<p>No estas logeado</p>
-<a href="{% url 'login' %}">login</a>
+<p class="display-3 pb-5 col-8 mx-auto">¡UPS! Cerraste la sesión</p>
+<p class="display-3 col-8 mx-auto">haz click <a class="text-success" href="{% url 'login' %}">aqui</a> para iniciar sesión nuevamente</p>
 {% endif %}
-
+</div>
 
 
 {% endblock %}
