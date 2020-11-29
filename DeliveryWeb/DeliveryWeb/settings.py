@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usuarios.apps.UsuariosConfig',
-    'crispy_forms',
     'sesion.apps.SesionConfig',
     'rest_framework',
+    'crispy_forms',
+    
 ]
 
 REST_FRAMEWORK = {
