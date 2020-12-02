@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = '##hh+ft56u*jcu22150q6o^@=t$-8oc*2biv-9621bbr3p%zde'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','deliveryadmin.pythonanywhere.com']
 
 
 # Application definition
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     'sesion.apps.SesionConfig',
     'rest_framework',
     'crispy_forms',
-    
+
 ]
 
 REST_FRAMEWORK = {
@@ -60,10 +61,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'DeliveryWeb.urls'
 
+#TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['./templates',],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
